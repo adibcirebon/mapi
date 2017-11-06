@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col s12 m6 l6">
+    <h2 class="header">{{ empl.nama | uppercase }}</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <img class="activator" src="https://lorempixel.com/100/190/nature/6" style="cursor: pointer">
+      </div>
+
+      <div class="card-stacked">
+        <div class="card-content">
+          <p class="activator" style="cursor: pointer">
+            {{ empl.bio }}
+          </p>
+        </div>
+        <div class="card-action">
+          <a href="salary/absen">Data Absensi</a>
+          <a href="salary/pendapatan">Pendapatan</a>
+          <a href="#">Potongan</a>
+          <a href="#">Slip Gaji</a>
+        </div>
+      </div>
+
+      <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">
+        Employee Details
+        <i class="material-icons right">close</i>
+      </span>
+        <p>
+          NIK: {{ empl.nik }}<br>
+          Nama: {{ empl.nama }}<br>
+          Jenis Kelamin: {{ empl.jenisKelamin }}<br>
+          Tempat Lahir: {{ empl.tempatLahir }}<br>
+          Tanggal Lahir: {{ empl.tanggalLahir | date: 'dd MMM yyyy'}}<br>
+          No HP: {{ empl.nomorHandphone }}<br>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l6">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<h5>Laporan Kehadiran</h5>
+<div>
+  <label for="bulan">Bulan Ke</label>
+  <select name="bulan" id="bulan">
+    <option *ngFor="let b of daftarBulan" value="{{b}}">{{b}}</option>
+  </select>
+</div>
+<div class="divider"></div>
+<div>
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <div class="card-panel">
+        <div>Masuk: {{kehadiran.hadir.length}} Hari</div>
+        <div>Sakit: {{kehadiran.sakit.length}} Hari</div>
+        <div>Izin: {{kehadiran.izin.length}} Hari</div>
+        <div>Lembur: {{kehadiran.lembur.length}} Hari</div>
+        <div>Cuti: {{kehadiran.cuti.length}} Hari</div>
+      </div>
+    </div>
+  </div>
+</div>
