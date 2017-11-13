@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {KehadiranKaryawanService} from '../shared/kehadiran-karyawan.service';
 import {Router} from '@angular/router';
+
+import {KehadiranKaryawanService} from '../shared/kehadiran-karyawan.service';
 
 @Component({
   selector: 'app-absen',
@@ -9,7 +10,8 @@ import {Router} from '@angular/router';
 })
 export class AbsenComponent implements OnInit {
 
-  constructor(private kehadiranService: KehadiranKaryawanService, private router: Router) {
+  constructor(private kehadiranService: KehadiranKaryawanService,
+              private router: Router) {
   }
 
   ngOnInit() {
