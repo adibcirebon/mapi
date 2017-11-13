@@ -13,6 +13,8 @@ import {InfoComponent} from './info/info.component';
 import {HomeComponent} from './home/home.component';
 import {AbsensiComponent} from './salary/absensi/absensi.component';
 import {PendapatanComponent} from './salary/pendapatan/pendapatan.component';
+import {KaryawanService} from './shared/karyawan.service';
+import {MaterializeModule} from 'angular2-materialize';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -47,9 +49,10 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes, {enableTracing: true})
+    MaterializeModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [KaryawanService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

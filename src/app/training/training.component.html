@@ -1,3 +1,22 @@
-<p>
-  training works!
-</p>
+<h2>Daftar Training</h2>
+
+<div class="row">
+  <div class="col m5">
+    <ul>
+      <li *ngFor="let training of listTraining">
+        <button (click)="setSelectedTraining(training)">
+          {{ training.title }} - {{training.tanggal | date: 'dd MMM yy' }}
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="col m7">
+    <div *ngIf="selectedTraining != null">
+      Judul Training: {{ selectedTraining?.title }} <br>
+      Pemateri: {{ selectedTraining?.pemateri }} <br>
+      Waktu: {{ selectedTraining?.tanggal | date: 'dd MM yyyy hh:mm' }}<br>
+
+      <button class="btn" (click)="regiterTraining(selectedTraining)">Register</button>
+    </div>
+  </div>
+</div>

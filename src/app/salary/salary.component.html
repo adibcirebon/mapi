@@ -13,8 +13,8 @@
           </p>
         </div>
         <div class="card-action">
-          <a href="salary/absen">Data Absensi</a>
-          <a href="salary/pendapatan">Pendapatan</a>
+          <a href="salary/absen" routerLink="/salary/absen">Data Absensi</a>
+          <a href="salary/pendapatan" routerLink="/salary/pendapatan">Pendapatan</a>
           <a href="#">Potongan</a>
           <a href="#">Slip Gaji</a>
         </div>
@@ -35,6 +35,8 @@
         </p>
       </div>
     </div>
+    <button (click)="changedValue()">Kirim</button>
+    <a routerLink="/training/">Pindah</a>
   </div>
   <div class="col s12 m6 l6">
     <router-outlet></router-outlet>

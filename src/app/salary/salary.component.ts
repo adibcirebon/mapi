@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Karyawan} from '../shared/karyawan';
+import {KaryawanService} from '../shared/karyawan.service';
 
 @Component({
   selector: 'app-salary',
@@ -8,22 +9,16 @@ import {Karyawan} from '../shared/karyawan';
 })
 export class SalaryComponent implements OnInit {
 
-  empl: Karyawan = {
-    nama: 'Dimas Maryanto',
-    jenisKelamin: 'Laki - Laki',
-    alamat: 'Jl. Bukit Indah No B8',
-    bio: 'I a Software Engineer from PT.Tabel data Informatika',
-    nomorHandphone: '082117355133',
-    tanggalLahir: new Date,
-    tempatLahir: 'Bandung',
-    nik: 12342134
-  }
+  empl: Karyawan;
 
-  constructor() {
+  constructor(private karyawanService: KaryawanService) {
   }
 
   ngOnInit() {
-
+    this.empl = this.karyawanService.karyawan;
   }
 
+  changedValue() {
+    this.karyawanService.setNamaKaryawan('YUSUF');
+  }
 }

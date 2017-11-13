@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
+import {Training} from './training.model';
+import {Karyawan} from '../shared/karyawan';
+import {KaryawanService} from '../shared/karyawan.service';
 
 @Component({
   selector: 'app-training',
@@ -7,9 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainingComponent implements OnInit {
 
-  constructor() { }
+  selectedTraining: Training;
+  karyawan: Karyawan;
 
-  ngOnInit() {
+  listTraining: Training[] = [
+    new Training('SAP', new Date, 'Dewa'),
+    new Training('Bisnis Analis', new Date, 'Putri')
+  ];
+
+  constructor(private karyawanService: KaryawanService) {
   }
 
+  ngOnInit() {
+    this.karyawan = this.karyawanService.karyawan;
+  }
+
+  setSelectedTraining(training: Training) {
+    this.selectedTraining = training;
+  }
+
+  regiterTraining(reg: Training) {
+    console.log(this.karyawan);
+    console.log(reg);
+  }
 }

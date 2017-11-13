@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {KaryawanService} from './shared/karyawan.service';
 
 @Component({
   selector: 'app-root',
