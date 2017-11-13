@@ -1,7 +1,5 @@
 import {Karyawan} from './karyawan';
-import {Injectable} from '@angular/core';
 
-@Injectable()
 export class KaryawanService {
   karyawan: Karyawan = {
     nik: 10000,

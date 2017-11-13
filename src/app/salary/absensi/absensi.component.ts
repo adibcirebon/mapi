@@ -4,6 +4,7 @@ import {AbsenKaryawan} from '../../shared/absen';
 import {Lembur} from '../../shared/lembur';
 import {Karyawan} from '../../shared/karyawan';
 import {KaryawanService} from '../../shared/karyawan.service';
+import {KehadiranKaryawanService} from '../../shared/kehadiran-karyawan.service';
 
 @Component({
   selector: 'app-absensi',
@@ -26,27 +27,15 @@ export class AbsensiComponent implements OnInit {
     izin: AbsenKaryawan[],
     lembur: Lembur[],
     cuti: AbsenKaryawan[]
-  } = {
-    karyawan: this.empl,
-    hadir: [
-      {karyawan: this.empl, hari: new Date},
-      {karyawan: this.empl, hari: new Date},
-      {karyawan: this.empl, hari: new Date},
-      {karyawan: this.empl, hari: new Date}
-    ],
-    absen: [],
-    sakit: [],
-    izin: [],
-    lembur: [],
-    cuti: []
   };
 
-  constructor(private karyawanService: KaryawanService) {
+  constructor(private karyawanService: KaryawanService,
+              private kehadiranService: KehadiranKaryawanService) {
   }
 
   ngOnInit() {
     this.empl = this.karyawanService.karyawan;
-    console.log(this.empl);
+    this.kehadiran = this.kehadiranService.kehadiran;
   }
 
 }

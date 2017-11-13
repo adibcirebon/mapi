@@ -1,3 +1,29 @@
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Logo</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <!-- Dropdown Trigger -->
+      <li>
+        <a class="dropdown-button"
+           href="#!" data-activates="dropdown1">
+          Dropdown
+          <i class="material-icons right">arrow_drop_down</i>
+        </a>
+      </li>
+      <li><a href="sass.html" routerLink="/salary">Salary</a></li>
+      <li><a href="badges.html" routerLink="/absen">Absen</a></li>
+      <li><a href="collapsible.html">JavaScript</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Dropdown Structure -->
+<ul id="dropdown1" class="dropdown-content">
+  <li><a href="#!" routerLink="/salary/absen">Absensi</a></li>
+  <li><a href="#!" routerLink="/salary/pendapatan">Pendapatan</a></li>
+  <li class="divider"></li>
+</ul>
+
 <br>
 <div class="container">
   <router-outlet></router-outlet>

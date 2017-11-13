@@ -2,7 +2,7 @@
 <div>
   <label for="bulan">Bulan Ke</label>
   <select name="bulan" id="bulan" materialize="material_select">
-    <option *ngFor="let b of daftarBulan" value="{{b}}">{{b}}</option>
+    <option *ngFor="let b of daftarBulan" [value]="b">{{b}}</option>
   </select>
 </div>
 <div class="divider"></div>

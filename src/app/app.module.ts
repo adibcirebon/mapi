@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {MaterializeModule} from 'angular2-materialize';
 
 import {AppComponent} from './app.component';
 import {RouterModule, Routes} from '@angular/router';
@@ -14,7 +15,6 @@ import {HomeComponent} from './home/home.component';
 import {AbsensiComponent} from './salary/absensi/absensi.component';
 import {PendapatanComponent} from './salary/pendapatan/pendapatan.component';
 import {KaryawanService} from './shared/karyawan.service';
-import {MaterializeModule} from 'angular2-materialize';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -52,7 +52,7 @@ const appRoutes: Routes = [
     MaterializeModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [KaryawanService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
