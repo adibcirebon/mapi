@@ -17,9 +17,14 @@ export class AbsenComponent implements OnInit {
   ngOnInit() {
   }
 
-  tambah() {
+  tambahMasuk() {
     this.kehadiranService.addNewKehadiran();
     console.log(this.kehadiranService.kehadiran.hadir.length);
+    this.router.navigate(['salary', 'absen']);
+  }
+
+  tambahSakit(message: string) {
+    this.kehadiranService.addNewSakit(message);
     this.router.navigate(['salary', 'absen']);
   }
 }

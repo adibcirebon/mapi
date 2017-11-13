@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 
 import {Karyawan} from './karyawan';
 import {KehadiranKaryawan} from './kehadiran-karyawan';
-import {AbsenKaryawan} from './absen';
+import {AbsenKaryawan, Prihal} from './absen';
 import {Lembur} from './lembur';
 import {KaryawanService} from './karyawan.service';
 
@@ -23,9 +23,6 @@ export class KehadiranKaryawanService {
   } = {
     karyawan: this.karyawanService.karyawan,
     hadir: [
-      {karyawan: this.karyawanService.karyawan, hari: new Date},
-      {karyawan: this.karyawanService.karyawan, hari: new Date},
-      {karyawan: this.karyawanService.karyawan, hari: new Date},
       {karyawan: this.karyawanService.karyawan, hari: new Date}
     ],
     absen: [],
@@ -39,6 +36,15 @@ export class KehadiranKaryawanService {
     this.kehadiran.hadir.push({
       karyawan: this.karyawanService.karyawan,
       hari: new Date
+    });
+  }
+
+  addNewSakit(message: string) {
+    this.kehadiran.sakit.push({
+      karyawan: this.karyawanService.karyawan,
+      prihal: Prihal.SAKIT,
+      tanggal: new Date,
+      keterangan: message
     });
   }
 }

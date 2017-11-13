@@ -1,2 +1,14 @@
-<button class="btn waves-effect waves-light"
-        (click)="tambah()">Tambah Kehadiran</button>
+<div class="row">
+  <button class="btn waves-effect waves-light"
+          (click)="tambahMasuk()">Tambah Kehadiran
+  </button>
+</div>
+
+
+<div class="row">
+  <textarea type="text" #keterangan cols="20" rows="40"></textarea>
+  <button class="btn waves-effect waves-light" (click)="tambahSakit(keterangan.value)">
+    Tambah Sakit
+  </button>
+
+</div>
